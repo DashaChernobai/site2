@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>
+
+</title>
+
+<style>
+    @supports (-moz-appearance:none) {
+        #albumlist {
+            list-style-type: none;
+            text-align:center;
+        }
+        #albumlist li {
+            float: left;
+            width:300px;
+            height: 180px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+    
+        }
+        #albumlist img {
+            float: center;
+            display: block;
+            border: 6px solid rgb(81, 116, 161);
+        }
+
+        h1 { 
+            /*отступ сверху*/
+            padding: 50px;
+            color: #06233b; 
+            font-family: cursive; 
+            font-size:40px;
+            text-shadow: 2px 5px 0 rgba(0,0,0,0.2);
+            align-content: center;
+        }
+
+        h2 { 
+            font-size: 180%; 
+            font-family: cursive; 
+            color: #061750;
+            text-shadow: 2px 5px 0 rgba(0,0,0,0.2);
+        }
+
+        h3 { 
+            font-size: 140%; 
+            text-indent: 1em; 
+            font-family: cursive; 
+            color: #06233b;
+            text-shadow: 2px 5px 0 rgba(0,0,0,0.2);
+            text-align:center;
+        }
+
+        .main_img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 99%;
+            padding: 25px 0px;
+        }
+
+        a.menu, p.menu {
+            display: block;
+            color: #140D34; 
+            font-family: cursive; 
+            font-size:16px; 
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+            margin-inline-start: 7px; 
+            margin-inline-end: 7px;
+    
+        }
+
+        p.pudding {
+            color: #1b0303; 
+            text-indent: 3em; 
+            font-family: cursive; 
+            font-size:16px; 
+        }
+
+        p.link {
+            color: #1b0303; 
+            text-indent: 2em; 
+            font-family: cursive; 
+            font-size:18px; 
+            text-align:left;
+        }
+
+        ol {
+            margin-right: 5px;
+            font-family: cursive;
+            font-size:16px;
+            padding-right: 0px;
+            text-align:left;
+        }
+
+        ul {
+            margin-right: 5px;
+            font-family: cursive;
+            font-size:16px;
+            padding-right: 10px;
+            text-align:left;
+        }
+
+        a:link {
+            color: #0000d0; /* Цвет ссылок */
+        }
+        a:visited {
+            color: #900060; /* Цвет посещенных ссылок */
+        }
+
+        ul strong { color:rgb(41, 6, 73) }
+        ol strong { color:rgb(41, 6, 73) }
+
+         p:first-letter {
+	        font-family: cursive;
+	        font-size: 120%;
+	
+        }
+        
+        p.table {
+            color: #1b0303; 
+            text-indent: 1em;
+            font-family: cursive; 
+            font-size:16px; 
+            margin-inline-start: 5px; 
+            margin-inline-end: 5px;
+        }
+
+        tr.even {
+            background: #7bc9ab; 
+        }
+        td.border, th.border {
+            padding: 0px; /* Поля вокруг содержимого таблицы */
+            border:3px solid rgb(81, 116, 161); 
+        }
+
+        p.text {
+            color: #1b0303; 
+            text-indent: 50px; 
+            font-family: cursive;
+            font-size:17px; 
+            margin-inline-start: 10px; 
+            margin-inline-end: 5px;
+            text-align:left;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        p.list {
+            color: #2e0b5c; 
+            font-family: cursive;
+            font-size:17px; 
+            text-shadow: 2px 5px 0 rgba(0,0,0,0.2);
+            text-align:left;
+        }
+
+
+        form {
+            padding: 0px 40px 6px 40px;
+            text-align:left;
+        }
+
+        textarea{
+            background: #FFFFFF;
+            width: 300px;
+            height: 100px;
+            border: 1px solid #000000;
+    
+            display:block;
+            font-size:16px;
+            font-weight: 300;
+            color:rgb(1, 1, 1);
+            padding-left:20px;
+            padding-right:20px;
+            font-family: cursive;
+            font-size:16px;
+            text-align:left;
+        }
+        input[type="text"]::placeholder {
+            color: rgb(0, 0, 0);
+        }
+        textarea[type="text"]::placeholder {
+            color: rgb(112, 115, 126);
+        }
+
+
+        input {
+            width: 300px;
+            height: 40px;
+            border: 1px solid rgb(31, 25, 65);
+            color:rgb(31, 25, 65);
+            padding-left:20px;
+            padding-right:20px;
+            margin-bottom:20px;
+            font-family: cursive;
+            font-size:16px;
+        }
+
+        input[type=submit] {
+            cursor:pointer;
+        }
+
+        .btn {
+            width: 344px;
+            height: 35px;
+        }
+
+ 
+        div {
+            border:"2";
+            border:2px solid rgb(81, 116, 161); /* задаём рамку для блоков */
+            text-align:center;  /* выравниваем текст всех блоков по центру */
+            }
+
+        .img{
+            width:20%;  /* задаём ширину*/
+            float:left;  /* задаём оптекание длоков с левой стороны*/
+            height:200px; /* высоту задаю для примера*/
+        }
+        .header{
+            width:79.4%; /* задаём ширину*/
+            float:left; /* задаём оптекание длоков с левой стороны*/
+            height:200px;  /* высоту задаю для примера*/
+        }
+        .menu{
+            clear:both;  /* убираем высоту для этого блока */
+        }
+        .main{
+            width:100%; /* задаём ширину главного блока немного больше, так как ширина границ тоже включается при рассчёте ширины*/
+            margin:auto;  /* выравниваем главный блок по центру страницы*/
+        }
+        .left, .right{
+            width:20.02%;  /* задаём ширину*/
+            float:left;  /* задаём оптекание длоков с левой стороны*/
+            height:687px; /* высоту задаю для примера*/
+        }
+        .content{
+            width:59.05%;
+            float:left;
+            height:687px;  /* высоту задаю для примера*/
+        }
+        .main_content{
+            width:99.8%;
+            float:left;
+            height:100%;  /* высоту задаю для примера*/
+        }
+        .footer{
+            clear:both;  /* убираем высоту для этого блока */
+        }
+    }
+
+    @media screen and (min-device-width: 1600px) {
+     div {width: 1500px;}
+    }
+    @media screen and (device-width: 1280px) {
+     div {width: 1100px;}
+    }
+    @media screen and (device-width: 1024px) {
+     div {width: 980px;}
+    }
+
+    @page {
+         size: auto;   /* auto-начальное значение */
+         margin: 10%;
+      }
+
+    @media print {
+	p, table, tr, td {
+ 	widows: 3;
+ 	orphans: 3;
+	}
+   }
+
+
+</style>
+
+<link rel="stylesheet" href="C:\Users\Zver\Desktop\кодики\test-site\styles\bloc.css">
+<link rel="stylesheet" href="C:\Users\Zver\Desktop\кодики\test-site\styles\Заголовки.css">
+<link rel="stylesheet" href="C:\Users\Zver\Desktop\кодики\test-site\styles\Текст.css">
+<link rel="stylesheet" href="C:\Users\Zver\Desktop\кодики\test-site\styles\Картинки.css">
+<link rel="stylesheet" href="C:\Users\Zver\Desktop\кодики\test-site\styles\Таблица.css">
+<link rel="stylesheet" href="C:\Users\Zver\Desktop\кодики\test-site\styles\Разное.css">
+
+<link rel="stylesheet" href="C:\Users\Zver\Desktop\кодики\test-site\styles\Меню.css">
+
+</head>
+<body bgcolor="#D9FBE7">
+    <div class="main">
+
+
+        <div class="img"><img src="images\cat1.jpg" width=100%  height:200px; ></div>
+        <div class="header"><h1>Салем - кот ворюга или Король Лев</h1></div>
+
+        <div class="menu">
+            <table align="center" width=100% border=3 >
+                
+                <tr>
+                    <td class="border" width=20.2% align="center"><p Class="menu"><a href="file:///C:/Users/Zver/Desktop/%D0%BA%D0%BE%D0%B4%D0%B8%D0%BA%D0%B8/test-site/index.html">Главная страница</a></p></td>
+                    <td class="border" width="130" align="center"><p Class="menu"><a href="file:///C:/Users/Zver/Desktop/%D0%BA%D0%BE%D0%B4%D0%B8%D0%BA%D0%B8/test-site/2nd.html">Факты про ориенталов</a></p></td>
+                    <td class="border" width="150" align="center"><p Class="menu"><a href="file:///C:/Users/Zver/Desktop/%D0%BA%D0%BE%D0%B4%D0%B8%D0%BA%D0%B8/test-site/3rd.html">Воспитание: что важно знать</a></p></td>
+                    <td class="border" width="130" align="center"><p Class="menu"><a href="file:///C:/Users/Zver/Desktop/%D0%BA%D0%BE%D0%B4%D0%B8%D0%BA%D0%B8/test-site/4th.html">Уход и содержание</a></p></td>
+                    <td class="border" width="120" align="center"><p Class="menu"><a href="file:///C:/Users/Zver/Desktop/%D0%BA%D0%BE%D0%B4%D0%B8%D0%BA%D0%B8/test-site/5th.html">Одежда для котов</a></p></td>
+                    <td class="border" width="110" align="center"><p Class="menu"><a href="file:///C:/Users/Zver/Desktop/%D0%BA%D0%BE%D0%B4%D0%B8%D0%BA%D0%B8/test-site/6th.html">Топ самых богатых котов мира</a></p></td>
+                    <td class="border" width="110" align="center"><p Class="menu"><a href="file:///C:/Users/Zver/Desktop/%D0%BA%D0%BE%D0%B4%D0%B8%D0%BA%D0%B8/test-site/7th.html">Кошачьи цитаты</a></p></td>
+                    <td class="border" width=20.2% align="center"><p Class="menu"><a href="file:///C:/Users/Zver/Desktop/%D0%BA%D0%BE%D0%B4%D0%B8%D0%BA%D0%B8/test-site/8th.html">Отправить сообщение</a></p></td>
+                
+                </tr>
+            
+                
+                
+            </table> 
+        </div>
+
+
+        <div class="main_content">
+            <h2 align="center">
+                Воспитание: что важно знать
+                </h2>
+                <dl>
+                    <hr/>
+                    <dt><h3>Детство решает многое</h3></dt>
+                      <dd><p Class="text">Основы ваших взаимоотношений с кошкой формируются с ее раннего детства. 
+                          Важно, чтобы котята уже в первые недели жизни хотя бы чуть-чуть общались с 
+                          людьми и были приучены к рукам. При этом отрывать котят от мамы-кошки, когда 
+                          им еще не исполнилось 8 недель, нежелательно. Подобранную на улице кошку воспитывать 
+                          гораздо сложнее — она может никогда до конца не признать вашего авторитета. Как только
+                           кошка появляется в доме, важно установить ряд правил, которые никогда не должны 
+                           меняться. Например, это может касаться мест в доме, в которых ей находиться нельзя.</p>
+                        </dd>
+                        <hr/>
+                      <dt><h3>Как кошка выбирает себе хозяина</h3></dt>
+                      <dd><p Class="text">Как правило, кошки с задатками лидера (активные и своевольные) выбирают себе в качестве
+                           авторитета мужчину, а спокойные, ласковые и чистоплотные кошечки — женщину. Хозяин — 
+                           это, прежде всего, тот, кто кормит кошку и ухаживает за ней. При этом она может выбрать
+                            себе еще и «любимчика» — члена семьи, с которым она будет играть, возле которого
+                             спать. Но ухаживать за собой кошка позволит только хозяину: он будет стричь ей когти,
+                              мыть, давать лекарства и так далее.</p>
+                            </dd>
+                            <hr/>
+                      <dt><h3>Будьте для кошки авторитетом</h3></dt>
+                      <dd><p Class="text">Считается, что кошка воспринимает своего владельца как некую «старшую кошку», родоначальницу,
+                           и поэтому ведет себя по отношению к хозяину как ребенок. Особенно это проявляется у пород 
+                           с ярким территориальным поведением — мэйн-кунов, европейских короткошерстных, сибирских.
+                            Другие кошки, например, сиамы, ориенталы, сфинксы чувствуют себя частью стаи, в которой
+                             все домочадцы. Конфликты между кошкой и человеком возникают тогда, когда его главенство
+                              не воспринимается как безусловное. Чтобы стать для кошки лидером, не поддавайтесь на 
+                              провокации — если кошке нельзя заходить в спальню, но один раз вы не выдержали жалобного
+                               мяуканья и пустили ее «из жалости», вы подали кошке знак, что можете сделать это снова.</p>
+                            </dd>
+                            <hr/>
+                      <dt><h3>Кошки — ранимые существа</h3></dt>
+                      <dd><p Class="text">В отличие от собак, чья преданность проявляется ярко, кошки эмоционально не выражают 
+                          привязанности к хозяину. Но их независимость иллюзорна: при разлуке с хозяином кошки 
+                          могут испытывать сильнейший стресс. На психическом состоянии кошки могут сказаться почти
+                           любые изменения: появление в доме ребенка или нового питомца, переезд и даже просто 
+                           исчезновение старого кресла. В моменты, когда в окружении кошки что-то меняется, важно быть 
+                           рядом с ней, окружать ее лаской. Так кошка будет чувствовать, что всё в порядке. Также кошку
+                            ни в коем случае нельзя бить и унижать. Это недопустимо и, что самое главное, совершенно 
+                            бесполезно: кошка не станет послушной, зато может затаить обиду и долго мстить хозяину, например,
+                             портить его любимые вещи. Для кошки хозяин — это не только лидер, но и друг.</p>
+                            </dd>
+                            <hr/>
+                      <dt><h3>Реагируйте сразу</h3></dt>
+                      <dd><p Class="text">Как только кошка совершила проступок, на него нужно сразу отреагировать 
+                          (через 10 секунд уже будет поздно, так как у кошек кратковременная память).
+    
+                        Можно ли бить кота, чтобы воспитывать? Определенно — нет. Как же стоит отреагировать? 
+                        Попробуйте пообщаться с кошкой на ее языке — зашипите или легонько щелкните ее по носу,
+                         ведь именно так кошки ведут себя во время конфликтов. Также вы можете брызнуть на кошку 
+                         водой или зашуметь, например, хлопнуть в ладоши. Не отводите глаза, иначе кошка не признает
+                          в вас лидера.</p>
+                        </dd>
+                        <hr/>
+                      <dt><h3>Что делать, если кошка агрессивна</h3></dt>
+                      <dd><p Class="text">В первую очередь — ищите причины агрессии, ведь беспричинная агрессия встречается крайне редко. 
+                          Возможно, кошка заболела или чем-то сильно напугана. Во время полового созревания кошки могут
+                           проявлять территориальную агрессию (отстаивать свою территорию). Если кошка бросается на вас,
+                            кусается и царапается, а вы не можете устранить причину такого поведения — покажите кошку 
+                            ветеринарному врачу. Иногда помогает консультация зоопсихолога.</p>
+                        </dd>
+                        <hr/>
+                      <dt><h3>Территория важна</h3></dt>
+                      <dd><p Class="text">Для кошек важно понятие территории: им просто необходимо укрытие, где они смогут почувствовать 
+                          себя в безопасности, огражденными от окружающего мира. Поэтому они так любят кошачьи домики — 
+                          их можно купить в магазине или сделать из коробки. Не все кошки любят прятаться: они могут просто 
+                          сидеть на шкафу или под столом, дремать, одним глазом посматривая, что происходит вокруг. 
+                          Главное — ощущение недоступности и безопасности. Если в вашем доме несколько кошек, они
+                           будут постоянно выяснять отношения и делить территорию. Вы можете этого даже не заметить — 
+                           общение вовсе не обязательно происходит в виде открытых конфликтов. Напряженности в этом
+                            вопросе можно избежать, установив игровой комплекс с несколькими ярусами — кошки поделят 
+                            их между собой. 
+    
+                        Мы предложили решения для некоторых проблемных ситуаций, которые могут возникнуть при воспитании
+                         кошек. Чтобы лучше понять повадки кошки и ее потребности (в правильном питании, игре и человеческой
+                          ласке), почаще наблюдайте за ней. Если вы будете внимательны к нуждам своей любимицы, серьезные
+                           вопросы с воспитанием вряд ли возникнут, а ваша кошка будет каждый день дарить вам много приятных
+                            минут.</p>
+                        </dd>
+                  </dl>
+                  
+                <p Class="link"><a href="https://bosch-club.ru/cats/the-kitten/" target="_blank">Больше информации можно узнать здесь</a></p>
+            
+        </div>
+
+        
+        <div class="footer">
+            <p Class="pudding">Сайт создала Чернобай Дарья ИТШИ-19-2</p></th>
+            </tr>
+        </div>
+
+
+    </div>
+</body>
+</html>
